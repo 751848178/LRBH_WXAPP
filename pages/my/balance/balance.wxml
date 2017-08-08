@@ -1,0 +1,19 @@
+<scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew">
+  <view wx:for="{{balanceList}}" wx:key="{{item.id}}" style="background:#FFF;overflow:hidden;">
+    <view class="line-content" style="margin:20rpx 0 60rpx 30rpx;font-size:28rpx;">
+      <text>剩余金额：</text>
+      <text class="content" style="font-size:40rpx;color:#333;">{{item.balance}}</text>
+    </view>
+    <view class="line"></view>
+    <view class="line-content">
+      <text>商品名称：</text>
+      <text class="content">{{item.object_name}}</text>
+    </view>
+    <view class="line-content">
+      <text>购买时间：</text>
+      <text class="content">{{item.created_date}}</text>
+    </view>
+    <view class="line-full"></view>
+  </view>
+  <view style="padding:20rpx;text-align:center;font-size:24rpx;color:#F4AB70;background:#FFF;">*以上信息仅限参考请以院内查询为准</view>
+</scroll-view>

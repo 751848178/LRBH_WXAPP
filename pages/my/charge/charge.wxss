@@ -1,0 +1,153 @@
+page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.tab {
+  background: white;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  border-bottom: 3rpx solid #d9d9d9;
+  justify-content: space-around;
+}
+
+.tab-item {
+  color: #101010;
+  flex: 1 1 40%;
+  line-height: 80rpx;
+  margin: auto 0rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.tab-item.on {
+  border-bottom: 7rpx solid #ff6091;
+}
+
+.swiper-tab {
+  position:absolute;
+  top:80rpx;
+  left:0;
+  width:calc(100vw);
+  height: calc(100vh - 40px);
+  font-size: 28rpx;
+}
+
+.comment-tab.on {
+  z-index: 1;
+}
+
+.comment-tab:first-child {
+  border:#BBB solid 1rpx;
+  margin-right:-1%;
+}
+
+.comment-tab:last-child {
+  border:#BBB solid 1rpx;
+  margin-left:-1%;
+}
+
+.charge-line {
+  height: 4rpx;
+  background-color: #e7e7e7;
+  margin: 20rpx 0 20rpx 0;
+}
+
+.line {
+  height: 3rpx;
+  width: 90%;
+  background-color: #e7e7e7;
+  margin: 20rpx 0 20rpx 30rpx;
+}
+.vertical-line{
+  display: inline-block;
+  height: 60rpx;
+  width: 3rpx;
+  background-color: #e7e7e7;
+}
+
+.swiper-peeding {
+  margin-top: 50rpx;
+}
+
+.swiper-peeding .content {
+  float: right;
+  margin-right: 50rpx;
+  width:500rpx;
+  word-wrap:break-word;
+}
+
+.line-content {
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+  overflow:hidden;
+}
+
+.swiper-waitcomment {
+  margin-top: 50rpx;
+}
+
+.swiper-waitcomment .content {
+  float: right;
+  margin-right: 50rpx;
+  width:500rpx;
+  word-wrap:break-word;
+}
+
+.swiper-waitcomment button {
+  display: inline-block;
+  border: white solid 2rpx;
+  width: 20%;
+  height: 54rpx;
+  background-color: white;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 54rpx;
+}
+
+.swiper-waitcomment .complain {
+  color: #fa7725;
+  border-color: #fa7725;
+  margin: 0 90rpx 0 90rpx;
+}
+
+.swiper-waitcomment .waitcomment {
+  color: #04b00f;
+  border-color: #04b00f;
+  margin: 0 90rpx 0 100rpx;
+}
+.swiper-waitcomment .comment {
+  color: #d9d9d9;
+  border-color: #d9d9d9;
+  margin: 0 90rpx 0 100rpx;
+}
+.swiper-comment .tab{
+  margin: 0 auto;
+  margin-top:30rpx;
+  margin-bottom: 30rpx;
+}
+.swiper-comment button {
+  display: inline-block;
+  border: white solid 1rpx;
+  width: 30%;
+  height: 54rpx;
+  background-color: white;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 54rpx;
+}
+.swiper-comment .tab-list.on{
+  border-color: #FF6091;
+  color: #FF6091;
+}
+.swiper-comment .content {
+  float: right;
+  margin-right: 50rpx;
+  width:500rpx;
+  word-wrap:break-word;
+}
+.swiper-tab scroll-view{height:1070rpx;}

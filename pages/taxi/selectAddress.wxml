@@ -1,0 +1,5 @@
+<!--selectAddress.wxml-->
+<view catchtouchmove="catchMove" class="page">
+<text>selectAddress.wxml</text>
+
+</view>

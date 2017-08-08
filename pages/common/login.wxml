@@ -1,0 +1,17 @@
+<!--login.wxml-->
+<form catchtouchmove="catchMove" class="page">
+  <label class="item">
+    <text>手机号</text>
+    <input type="number" bindinput="bindKeyMobile" placeholder="请输入手机号" />
+  </label>
+  <view class="item">
+    <text>验证码</text>
+    <input type="number" bindinput="bindKeyCode" placeholder="请输入验证码" />
+    <button class="code" loading="{{ sending }}" disabled="{{ sending }}" bindtap="bindTapSend">{{ sendText }}</button>
+  </view>
+  <button class="submit" bindtap="bindTapLogin" loading="{{ submiting }}" disabled="{{ submiting }}">登录</button>
+  <label class='item' bindtap="bindTapReg">
+    <text class='t1'>没有帐号？请</text>
+    <text class='t2'>注册</text>
+  </label>
+</form>

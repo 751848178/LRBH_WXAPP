@@ -1,0 +1,95 @@
+<!--my.wxml-->
+<view catchtouchmove="catchMove" class="page">
+  <view class="head">
+    <image class="avatar" src="{{avatarUrl}}" mode="aspectFill" />
+    <view class="left">
+      <view class="item">
+        <text class="nickname">{{nickname}}</text>
+      </view>
+      <view class="item">
+        <text class="level">{{level}}</text>
+      </view>
+      <view class="item">
+        <text class="userid">{{userid}}</text>
+      </view>
+    </view>
+    <view class="line" />
+    <view class="right" bindtap="toInterest">
+      <view class="star">
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_star2.webp-png" wx:if="{{star == 0}}" />
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_star.webp-png" wx:if="{{star > 0}}" />
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_star.webp-png" wx:if="{{star > 1}}" />
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_star.webp-png" wx:if="{{star > 2}}" />
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_star.webp-png" wx:if="{{star > 3}}" />
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_star.webp-png" wx:if="{{star > 4}}" />
+      </view>
+      <view class="item" bindtap="toInterest">
+        <text class="starDesc">{{ starDesc }}</text>
+      </view>
+    </view>
+    <image class="arrow" src="https://qn.wx.ilidu.cn/wxapp/my_arrow.webp-png" />
+  </view>
+
+  <view class="grid">
+    <view bindtap="bindTapGrid" data-item="blance" class="item blance">
+      <image src="https://qn.wx.ilidu.cn/wxapp/my_balance.webp-png" />
+      <text>余额</text>
+    </view>
+    <view class="line" />
+    <view bindtap="bindTapGrid" data-item="coupon" class="item coupon">
+      <image src="https://qn.wx.ilidu.cn/wxapp/my_coupon.webp-png" />
+      <text>代金券</text>
+    </view>
+    <view class="line" />
+    <view bindtap="bindTapGrid" data-item="petal" class="item petal">
+      <image src="https://qn.wx.ilidu.cn/wxapp/my_flower.webp-png" />
+      <text>花瓣</text>
+    </view>
+    <view class="line" />
+    <view bindtap="bindTapGrid" data-item="point" class="item point">
+      <image src="https://qn.wx.ilidu.cn/wxapp/my_point.webp-png" />
+      <text>积分</text>
+    </view>
+  </view>
+
+  <view class="project">
+    <view class="title" bindtap="bindTapGrid" data-item="item-ing">
+      <view class="line" />
+      <text class="main">我的项目</text>
+      <text class="sub">查看我的项目</text>
+      <image class="arrow" src="https://qn.wx.ilidu.cn/wxapp/my_arrow.webp-png" />
+    </view>
+    <view class="items">
+      <view bindtap="bindTapGrid" data-item="item-ing" class="item ing">
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_ing.webp-png" />
+        <text>进行中</text>
+      </view>
+      <view class="line" />
+      <view bindtap="bindTapGrid" data-item="item-rate" class="item rate">
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_rate.webp-png" />
+        <text>待评价</text>
+      </view>
+      <view class="line" />
+      <view bindtap="bindTapGrid" data-item="item-rated" class="item rated">
+        <image src="https://qn.wx.ilidu.cn/wxapp/my_rated.webp-png" />
+        <text>已完成</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="item" bindtap="bindTapTel">
+      <image class="icon" src="https://qn.wx.ilidu.cn/wxapp/my_service.webp-png" />
+      <text class="main">人工客服</text>
+      <text class="sub">18611305888</text>
+      <image class="arrow" src="https://qn.wx.ilidu.cn/wxapp/my_arrow.webp-png" />
+    </view>
+    <view class="line" />
+    <view class="item" bindtap="bindTapSetting">
+      <image class="icon" src="https://qn.wx.ilidu.cn/wxapp/my_setting.png" />
+      <text class="main">设置</text>
+      <image class="arrow" src="https://qn.wx.ilidu.cn/wxapp/my_arrow.webp-png" />
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,118 @@
+/* taxi.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f2;
+}
+
+.tab { 
+  background: white; 
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  border-bottom: 3rpx solid #d9d9d9;
+  justify-content: space-around;
+}  
+.tab-item {
+  color: #101010;
+  flex: 0 0 40%;
+  line-height: 80rpx;
+  margin: auto 0rpx;
+  text-align: center;
+  font-size: 32rpx;
+}  
+.tab-item.on{
+  border-bottom: 7rpx solid #FF6091;
+}
+
+#map {
+  width:auto;
+  flex: 1 0 0rpx;
+  display: flex;
+  margin: 12rpx;
+  border: 2rpx solid #d9d9d9;
+}
+.address {
+  height: 88rpx;
+  background: white; 
+  border: 2rpx solid #d9d9d9;
+  display: flex;
+}
+
+.address.dst {
+  margin: 12rpx 16rpx 6rpx 16rpx;
+}
+.address.src {
+  margin: 6rpx 16rpx 12rpx 16rpx;
+}
+
+.address .circle {
+  height: 16rpx;
+  width: 16rpx;
+  border-radius: 50%;
+  margin: auto 20rpx;
+}
+
+.address .red {
+  background-color: #FF7043;
+}
+.address .green {
+  background-color: #2AAF2B;
+}
+
+.address .line {
+  height: 50%;
+  width: 3rpx;
+  background-color: #d9d9d9;
+  margin: auto 16rpx;
+}
+
+.address .title {
+  line-height: 88rpx;
+  font-size: 32rpx;
+}
+
+.address .input {
+  flex: 1 0 0rpx;
+  line-height: 88rpx;
+  vertical-align: middle;
+  font-size: 32rpx;
+  margin: auto 10rpx;
+  color: #888888;
+}
+
+.address .placeholder {
+  color: #b5b5b5
+}
+
+.swiper-item {
+  display: flex;
+  flex-direction: column;
+  /*height: 350rpx;
+  width: 375rpx;*/
+}
+
+.swiper-tab{ 
+  width: 100%;
+  margin: 0rpx 0rpx 12rpx 0rpx;
+}  
+
+.swiper-tab button{
+  width: 80%;
+  height: 88rpx;
+  background-color: #FF6091;
+  color: white;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 88rpx;
+}
+
+.swiper-tab button.hover {
+  background-color: rgba(255, 96 , 145, 0.5);
+}

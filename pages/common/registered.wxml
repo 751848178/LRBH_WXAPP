@@ -1,0 +1,30 @@
+<!--registered.wxml-->
+<form catchtouchmove="catchMove" class="page">
+  <label class="item">
+    <text>手机号</text>
+    <input type="number" bindinput="bindKeyMobile" placeholder="请输入手机号" />
+  </label>
+  <view class="item">
+    <text>验证码</text>
+    <input type="number" bindinput="bindKeyCode" placeholder="请输入验证码" />
+    <button class="code" loading="{{ sending }}" disabled="{{ sending }}" bindtap="bindTapSend">{{ sendText }}</button>
+  </view>
+  <label class="item">
+    <text>姓名</text>
+    <input type="text" bindinput="bindKeyName" placeholder="请输入姓名" />
+  </label>
+  <label class="item">
+    <text>性别</text>
+    <radio-group class="radio-group" bindchange="bindChangeSex">
+      <label class="radio" wx:for="{{sexes}}" wx:key="sexes">
+        <radio color="#FF6091" value="{{item.name}}" checked="{{ item.name == sex }}"/>
+        <text>{{ item.value }}</text>
+      </label>
+    </radio-group>
+  </label>
+  <button class="submit" bindtap="bindTapReg" loading="{{ submiting }}" disabled="{{ submiting }}">注册</button>
+  <label class='item' bindtap="bindTapLogin">
+    <text class='t1'>已有帐号？请</text>
+    <text class='t2'>登录</text>
+  </label>
+</form>

@@ -1,0 +1,58 @@
+<!--promote.wxml-->
+<view catchtouchmove="catchMove" class="page">
+  <view class="tab">
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="bindTapTab">手机推荐</view>
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="bindTapTab">扫码推荐</view>
+    <view class="tab-item" bindtap="toHistory"><image style="width:40rpx;height:40rpx;" src="https://qn.wx.ilidu.cn/wxapp/promote_history.webp-png"></image></view>
+  </view>
+  <swiper current="{{currentTab}}" class="swiper-tab" duration="300" bindchange="bindChangeSwiper">
+    <swiper-item class="swiper-mobile">
+      <form class="contentArea" bindsubmit="formSubmit" bindreset="formReset">
+        <view class="lineblock">
+          <view class="title">朋友姓名：</view>
+          <input name="CustomerName" placeholder="请输入朋友姓名" />
+        </view>
+        <view class="line" />
+        <view class="lineblock">
+          <view class="title">朋友手机：</view>
+          <input name="CustomerMobile" placeholder="请输入朋友手机号" />
+        </view>
+        <view class="line" />
+        <view class="lineblock">
+          <view class="title">性别：</view>
+          <radio-group name="radio-group">
+            <label class="radio">
+              <radio value="1"/>男</label>
+            <label class="radio common-padding-left-40">
+              <radio checked="checked" value="2" />女</label>
+          </radio-group>
+        </view>
+        <view class="line" />
+        <view>
+          <view class="title percent-all">是否愿意向好友透露你的名字：</view>
+          <radio-group name="radio-group" class="radio-agree">
+            <label class="radio common-padding-left-40">
+              <radio value="1" />愿意</label>
+            <label class="radio common-padding-left-40">
+              <radio checked="checked" value="2" />不愿意</label>
+          </radio-group>
+        </view>
+          <view class="line"></view>
+        <view class="remark-block">
+          <view class="likeTextarea" bindtap="bindButtonTap" style="color:#CCC;width:{{winWidth}}px;">{{inputValue}}<label style="visibility:{{focus?(isShow?'visible':'hidden'):'hidden'}};">|</label></view>  
+          <input class="hideInput desc" bindinput="bindKeyInput" focus="{{focus}}" bindblur="inputBlur" style="width:{{winWidth}}px;"/>
+          <text class="holder" style="display:{{inputValue.length > 0?'none':'inline-block'}};">描述(好友意向项目等)不可超过30字!</text>
+        </view>
+          <view class="line"></view>
+        <view class="btn-area">
+          <button hover-class="hover" formType="submit">确定</button>
+        </view>
+      </form>
+    </swiper-item>
+    <swiper-item>
+      <view class="contentArea">
+        <label>扫描推荐区域</label>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

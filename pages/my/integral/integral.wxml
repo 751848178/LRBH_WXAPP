@@ -1,0 +1,24 @@
+<!--integral.wxml-->
+<scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew">
+  <view wx:for="{{integralList}}" wx:key="{{item.id}}" style="background:#FFF;overflow:hidden;">
+    <view class="line-content" style="margin:20rpx 0 35rpx 30rpx;font-size:28rpx;">
+      <text>数量：</text>
+      <text class="content" style="font-size:40rpx;color:#333;">{{item.amount}}</text>
+    </view>
+    <view class="line" style="margin-bottom:25rpx;"></view>
+    <view class="line-content">
+      <text>类型：</text>
+      <text class="content">{{item.point_type}}</text>
+    </view>
+    <view class="line-content">
+      <text>时间：</text>
+      <text class="content">{{item.created_date}}</text>
+    </view>
+    <view class="line-content">
+      <text>备注：</text>
+      <text class="content">{{item.remark}}</text>
+    </view>
+    <view class="line-full"></view>
+  </view>
+  <view style="padding:20rpx;text-align:center;font-size:28rpx;color:#676767;background:#FFF;">没有更多数据了</view>
+</scroll-view>

@@ -1,0 +1,4 @@
+<!--update.wxml-->
+<icon type="info" color="#FF6091" size="70"/>
+<text>请升级微信到最新版本</text>
+<button bindtap="bindTapRetry" hover-class="hover">重试</button>

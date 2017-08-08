@@ -1,0 +1,16 @@
+<!--agreement.wxml-->
+<view catchtouchmove="catchMove" class="page">
+<text class="p">尊贵的客人,您现在正在预定丽都为您提供的专车接驾服务：</text>
+<text class="p">1、此项服务是丽都医院和滴滴公司合作开发的线上系统,能够实现自助操作,仅为丽都会员专属使用,包含滴滴系统中的专车和快车,司机随机就近接单。</text>
+<text class="p">2、来院就诊,丽都新朋友们每月可以在北京市区内免费乘专车1次,银卡会员3次，金卡及金卡以上会员6次, 均为单程180元内,单程30公里以内每月500元封顶。</text>
+<text class="p">3、如您在使用过程中发现滴滴司机有如下违规行为，请即刻联络丽都工作人员保障您的权益：</text>
+<text class="p-sub">(1)恶意绕路.延误您的行程,未按实际路程行驶的;</text>
+<text class="p-sub">(2)要求您支付打车费用,服务态度恶劣的;</text>
+<text class="p-sub">(3)接单后又取消订单或未送您到目的地的;</text>
+<text class="p">4、同时，您在使用过程中系统也自动记录信息，如出现以下行为则按照失信记录在系统中：</text>
+<text class="p-sub">(1)目的地与实际订单记录不符;</text>
+<text class="p-sub">(2)中途行车里程与预定信息不匹配的;</text>
+<text class="p">5、如您在使用中有失信记录出现,系统将自动把您的信息及地址列入黑名单,您将不能继续使用滴滴用车服务</text>
+<text class="blank"/>
+<button bindtap="bindTapAgree" class="agree">同意并打车</button>
+</view>

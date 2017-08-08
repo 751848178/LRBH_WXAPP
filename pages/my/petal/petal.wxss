@@ -1,0 +1,23 @@
+/* petal.wxss */
+page{padding-top:10rpx;background: #f0f0f2;}
+view{box-sizing:border-box;}
+.surplus{padding-left:30rpx;width:100%;height:280rpx;overflow:hidden;background:#FFF;}
+.surplus label{display:block;margin:30rpx 0;padding-left:10rpx;border-left:10rpx solid #FF6091;font-size:28rpx;color:#333333;}
+.surplus text{display:block;padding:40rpx 0;font-size:48rpx;font-weight:bold;}
+.attorn{position:relative;margin:20rpx 0;padding-left:30rpx;width:100%;height:100rpx;line-height:100rpx;background:#FFF;}
+.right{width:30rpx;height:30rpx;position:absolute;right:20rpx;top:40rpx;}
+.right-arrow1,.right-arrow2{position:absolute;left:0;top:0;width:0;height:0;display:block;border-top:15rpx transparent dashed;border-right:15rpx transparent dashed;border-bottom:15rpx transparent dashed;border-left:15rpx white solid;overflow:hidden;}
+.right-arrow1{left:2rpx;/*重要*/border-left:15rpx #000 solid;}
+.right-arrow2{border-left:15rpx white solid;}
+.attorn image{margin-top:-10rpx;vertical-align:middle;}
+.attorn text{margin-left:20rpx;}
+.history{position:relative;background: white;width: 100%;height: 80rpx;display: flex;border-bottom: 3rpx solid #d9d9d9;justify-content: space-around;}
+.history .input,.history .output{color: #101010;flex: 0 0 20%;line-height: 72rpx;margin: auto 0rpx;text-align: center;font-size: 32rpx;border-bottom: 7rpx solid #FFF;}
+.input.on,.output.on{border-bottom: 7rpx solid #FF6091;}
+.hr{position:absolute;left:50%;margin-left:-1.5rpx;width:3rpx;height:100%;background:#d9d9d9;}
+.swiper-tab{background:#FFF;height:690rpx;margin: 6rpx 0 0 0;}
+.swiper-tab scroll-view{height:690rpx;}
+.line-content {margin-left: 30rpx;margin-bottom: 30rpx;font-size:28rpx;color:#AAA;overflow:hidden;line-height:32rpx;}
+.content{float: right;margin-right: 50rpx;width:500rpx;word-wrap:break-word;text-align:right;overflow:hidden;}
+.line {height: 3rpx;background-color: #e7e7e7;margin: 20rpx 0 30rpx 30rpx;}
+.charge-line {height:2rpx;background-color: #e7e7e7;margin: 20rpx 0 30rpx 0;}

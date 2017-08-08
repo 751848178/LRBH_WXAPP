@@ -1,0 +1,7 @@
+/* history.wxss */
+page{background: #f0f0f2;}
+.line-content{margin-left: 30rpx;margin-bottom: 30rpx;font-size:24rpx;color:#AAA;}
+.content{float: right;margin-right: 50rpx;}
+.line{height: 3rpx;background-color: #e7e7e7;margin: 20rpx 0 30rpx 30rpx;}
+.line-full{height:2rpx;background-color: #e7e7e7;margin: 20rpx 0 30rpx 0;}
+.line-full:last-child{margin-bottom:0;}

@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/my/my",
+    "pages/taxi/taxi",
+    "pages/taxi/selectAddress",
+    "pages/taxi/agreement",
+    "pages/common/update",
+    "pages/my/charge/charge",
+    "pages/my/charge/addComment",
+    "pages/my/charge/addComplain",
+    "pages/my/petal/petal",
+    "pages/my/petal/attorn",
+    "pages/my/setting/setting",
+    "pages/common/registered",
+    "pages/common/login",
+    "pages/my/balance/balance",
+    "pages/my/voucher/voucher",
+    "pages/my/integral/integral",
+    "pages/promote/history",
+    "pages/my/interest/interest"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF6091",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f0f0f2",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#FF6091",
+    "list": [
+      {
+        "pagePath": "pages/taxi/taxi",
+        "text": "一键打车",
+        "iconPath": "res/taxi.png",
+        "selectedIconPath": "res/taxi_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "res/my.png",
+        "selectedIconPath": "res/my_selected.png"
+      }
+    ]
+  }
+}

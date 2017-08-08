@@ -1,0 +1,140 @@
+<view class="tab">
+  <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="bindTapTab">进行中</view>
+  <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="bindTapTab">待评价</view>
+  <view class="tab-item {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="bindTapTab">已评价</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-tab" duration="300" bindchange="bindChangeSwiper">
+  <swiper-item class="swiper-peeding">
+    <scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew">
+      <block wx:for="{{peedingList}}"  wx:key="peeding{{index}}">
+        <view class="line-content">
+          <text>剩余项目：</text>
+          <text class="content">{{item.object_name}}</text>
+        </view>
+        <view class="line"></view>
+        <view class="line-content">
+          <text>剩余数量：</text>
+          <text class="content">{{item.amount}}</text>
+        </view>
+        <view class="line-content">
+          <text>购买价格：</text>
+          <text class="content">{{item.balance}}</text>
+        </view>
+        <view class="line-content">
+          <text>购买时间：</text>
+          <text class="content">{{item.created_date}}</text>
+        </view>
+        <view class="charge-line"></view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item class="swiper-waitcomment">
+    <view class="waitList">
+      <scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew">
+        <block wx:for="{{waitList}}" wx:key="wait{{index}}">
+          <view class="line-content">
+            <text>项目名称：</text>
+            <text class="content">{{item.object_name}}</text>
+          </view>
+          <view class="line"></view>
+          <view class="line-content">
+            <text>划扣数量：</text>
+            <text class="content">{{item.amount}}</text>
+          </view>
+          <view class="line-content">
+            <text>创建时间：</text>
+            <text class="content">{{item.created_date}}</text>
+          </view>
+          <view class="line"></view>
+          <view class="line-content">
+            <button bindtap="bindBtnComplain" style="{{item.operation_status == 'true' ? '' : 'margin-left:calc(20% + 280rpx);'}}{{item.complain_status == 'true' ? '' : 'color:#d9d9d9;border-color:#e7e7e7;'}}" data-status="{{item.complain_status}}" data-value="{{item.operation_id}}" class="complain">{{item.complain_status == 'true' ? '投诉' : '已投诉'}}</button>
+            <view class="vertical-line" wx:if="{{item.operation_status == 'true'}}"></view>
+            <button wx:if="{{item.operation_status == 'true'}}" data-value="{{item.operation_id}}" data-person="{{item.doctor_name}}" data-name="{{item.object_name}}" bindtap="bindBtnComment" class="waitcomment">评价</button>
+          </view>
+          <view class="charge-line"></view>
+        </block>
+      </scroll-view>
+    </view>
+  </swiper-item>
+  <swiper-item class="swiper-comment">
+    <view class="tab">
+      <button bindtap="bindTabComment" data-current="0" class="comment-tab tab-list {{commentListTab==0 ? 'on' : ''}}">我的评价</button>
+      <button bindtap="bindTabComment" data-current="1" class="comment-tab tab-list {{commentListTab==1 ? 'on' : ''}}">我的投诉</button>
+    </view>
+    <view hidden="{{commentListTab==0 ? false : true}}" class="commentList">
+      <scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew" style="height:984rpx;">
+        <block wx:for="{{commentList}}" wx:key="comment{{index}}">
+          <view class="line-content">
+            <text>项目名称：</text>
+            <text class="content">{{item.object_name}}</text>
+          </view>
+          <view class="line"></view>
+          <view class="line-content">
+            <text>主治医师：</text>
+            <text class="content">{{item.doctor_name}}</text>
+          </view>
+          <view class="line-content">
+            <text>项目评分</text>
+            <text class="content stars" style="color:#FF6091;">
+              <block wx:for="{{[0,1,2,3,4]}}" wx:for-item="i">
+                <text wx:if="{{i < item.operation_star}}" bindtap="selectStar" data-index="{{i}}">★</text>
+                <text wx:else bindtap="selectStar" data-index="{{i}}">☆</text>
+              </block>
+            </text>
+          </view>
+          <view class="line-content">
+            <text>评价内容：</text>
+            <text class="content">{{item.content}}</text>
+          </view>
+          <view class="line-content">
+            <text>评价时间：</text>
+            <text class="content">{{item.created_date}}</text>
+          </view>
+          <view class="line" wx:if="{{item.complain_status == 'true'}}"></view>
+          <view class="line-content" wx:if="{{item.complain_status == 'true'}}">
+            <button bindtap="bindBtnComplain" style="margin-left:calc(20% + 280rpx);border-color:#fa7725;width:20%;color:#fa7725;" data-status="{{item.complain_status}}" data-value="{{item.operation_id}}" class="complain">投诉</button>
+          </view>
+          <view class="charge-line"></view>
+        </block>
+        <view style="padding:20rpx;text-align:center;font-size:28rpx;color:#676767;background:#FFF;">没有更多数据了</view>
+      </scroll-view>
+    </view>
+    <view hidden="{{commentListTab==1 ? false : true}}" class="complainList">
+      <scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew" style="height:984rpx;">
+        <block wx:for="{{complainList}}" wx:key="complain{{index}}">
+          <view class="line-content">
+            <text>投诉类型：</text>
+            <text class="content" style="color:#FF6091;">{{item.complain_type}}</text>
+          </view>
+          <view class="line"></view>
+          <view class="line-content">
+            <text>投诉状态：</text>
+            <text class="content" style="color:#F4AB70;">{{item.complain_status}}</text>
+          </view>
+          <view class="line-content">
+            <text>处理措施：</text>
+            <text class="content">{{item.dispose_result}}</text>
+          </view>
+          <view class="line-content">
+            <text>处理人员：</text>
+            <text class="content">{{item.dispose_name}}</text>
+          </view>
+          <view class="line-content">
+            <text>处理时间：</text>
+            <text class="content">{{item.dispose_date}}</text>
+          </view>
+          <view class="line-content">
+            <text>提交时间：</text>
+            <text class="content">{{item.created_date}}</text>
+          </view>
+          <view class="line-content">
+            <text>投诉内容：</text>
+            <text class="content">{{item.content}}</text>
+          </view>
+          <view class="charge-line"></view>
+        </block>
+        <view style="padding:20rpx;text-align:center;font-size:28rpx;color:#676767;background:#FFF;">没有更多数据了</view>
+      </scroll-view>
+    </view>
+  </swiper-item>
+</swiper>

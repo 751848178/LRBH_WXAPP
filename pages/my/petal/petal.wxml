@@ -1,0 +1,81 @@
+<!--petal.wxml-->
+<view class="page">
+  <view class="surplus">
+    <label>剩余花瓣/个</label>
+    <text>{{count}}</text>
+  </view>
+  <view class="attorn" bindtap="attorn">
+    <image style="width:24px;height:23px;" src="https://qn.wx.ilidu.cn/wxapp/my_coin_move.webp-png"></image>
+    <text>花瓣转让</text>
+    <view class="right">
+      <label class="right-arrow1"></label>
+      <label class="right-arrow2"></label>
+    </view>
+  </view>
+  <view class="history">
+    <view class="input {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="hisTab">收入记录</view>
+    <view class="hr"></view>
+    <view class="output {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="hisTab">支出记录</view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-tab" duration="300" bindchange="bindChangeSwiper">
+    <swiper-item>
+      <scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew">
+        <block wx:for="{{incomeList}}" wx:key="income{{index}}">
+          <view class="line-content" style="margin:20rpx 0 30rpx 30rpx;font-size:28rpx;">
+            <text style="font-size:32rpx;color:#333;">花瓣：</text>
+            <text class="content" style="font-size:32rpx;color:#333;">{{item.balance}}</text>
+          </view>
+          <view wx:if="{{item.income_type_code != 3}}" class="line-content">
+            <text>金额：</text>
+            <text class="content">{{item.amount}}</text>
+          </view>
+          <view wx:if="{{item.income_type_code != 3}}" class="line-content">
+            <text>提成：</text>
+            <text class="content">{{item.rate}}</text>
+          </view>
+          <view wx:if="{{item.income_type_code != 3}}" class="line-content">
+            <text>等级：</text>
+            <text class="content">{{item.level}}</text>
+          </view>
+          <view class="line-content">
+            <text>{{item.income_type_code == 3 ? "转入人" : ""}}姓名：</text>
+            <text class="content">{{item.customer_name}}</text>
+          </view>
+          <view wx:if="{{item.income_type_code == 3}}" class="line-content">
+            <text>转入时间：</text>
+            <text class="content">{{item.created_date}}</text>
+          </view>
+          <view class="line-content">
+            <text>类型：</text>
+            <text class="content" style="color:#F4AB70;">{{item.income_type}}</text>
+          </view>
+          <view class="charge-line"></view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y lower-threshold="50" bindscrolltolower="getNew">
+        <block wx:for="{{presentList}}" wx:key="present{{index}}">
+          <view class="line-content" style="margin:20rpx 0 35rpx 30rpx;font-size:28rpx;">
+            <text style="font-size:32rpx;color:#333;">花瓣：</text>
+            <text class="content" style="font-size:40rpx;color:#333;">{{item.balance}}</text>
+          </view>
+          <view class="line-content">
+            <text>获得方式：</text>
+            <text class="content" style="color:#F4AB70;">{{item.present_type}}</text>
+          </view>
+          <view class="line-content">
+            <text>获得时间：</text>
+            <text class="content">{{item.created_date}}</text>
+          </view>
+          <view class="line-content">
+            <text>备注描述：</text>
+            <text class="content">{{item.remark}}</text>
+          </view>
+          <view class="charge-line"></view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,10 @@
+<view class="body page" catchtouchmove="catchMove">
+  <image class="success-icon" src="{{successImgUrl}}"></image>
+  <label class="success-content">
+    <text>恭喜您推荐成功!</text>
+    <text style="color:#FF6091;">您的朋友将享有1000元代金券</text>
+  </label>
+  <view class="line"></view>
+  <image class="qr" src="{{qrUrl}}"></image>
+  <text class="qr-desc">查看详情，请长按二维码关注公众号</text>
+</view>

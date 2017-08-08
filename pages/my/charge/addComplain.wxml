@@ -1,0 +1,19 @@
+<view class="body page" catchtouchmove="catchMove">
+  <form class="form" bindsubmit="formSubmit" bindreset="formReset">
+    <view class="contentArea">
+      <view class="lineblock">
+        <view class="title">投诉类型：</view>
+        <picker class="value" bindchange="bindPickerChange" value="{{complainTypeIndex}}" range="{{complainType.array}}">
+          <view class="picker">
+            {{complainType.array[complainTypeIndex]}}  ▼
+          </view>
+        </picker>
+      </view>
+      <view class="line" />
+      <textarea class="desc" name="content" placeholder="请输入投诉详细，不可超过40字！" bindinput="input" />
+    </view>
+    <view class="btn-area">
+      <button hover-class="hover" formType="submit">提交</button>
+    </view>
+  </form>
+</view>

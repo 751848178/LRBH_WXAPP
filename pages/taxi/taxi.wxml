@@ -1,0 +1,43 @@
+<!--taxi.wxml-->
+<view catchtouchmove="catchMove" class="page">
+<view class="tab">  
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="bindTapTab">现在叫车</view>  
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="bindTapTab">30分钟后</view>
+</view> 
+
+<map id="map" show-location="true"  scale="15" longitude="{{ location.longitude }}" latitude="{{ location.latitude }}" polyline="{{ polyline }}"/>
+<swiper current="{{currentTab}}" class="swiper-tab" duration="300" bindchange="bindChangeSwiper"> 
+    <swiper-item class="swiper-item">  
+    <label class="address dst">
+        <view class="circle red"></view>
+        <text class="title">目的地</text>
+        <view class="line" />
+        <text class="input placeholder">北京丽都医疗整容医院</text>
+    </label>
+    <label class="address src">
+        <view class="circle green"></view>
+        <text class="title">出发地</text>
+        <view class="line" />
+        <text class="input {{src=='输入您的位置'? 'placeholder':'' }}" bindtap="bindTapSelect">{{src}}</text>
+    </label>
+        <button hover-class="hover" bindtap="bindTapTaxi" disabled="{{taxing}}" loading="{{taxing}}" data-time="0">免费叫车</button>  
+    </swiper-item>  
+    <swiper-item class="swiper-item">  
+        <label class="address dst">
+        <view class="circle red"></view>
+        <text class="title">目的地</text>
+        <view class="line" />
+        <text class="input placeholder">北京丽都医疗整容医院</text>
+    </label>
+    <label class="address src">
+        <view class="circle green"></view>
+        <text class="title">出发地</text>
+        <view class="line" />
+        <text class="input {{src=='输入您的位置'? 'placeholder':'' }}" bindtap="bindTapSelect">{{src}}</text>
+    </label>
+      <button hover-class="hover" bindtap="bindTapTaxi" disabled="{{taxing}}" loading="{{taxing}}" data-time="30">免费预约</button>  
+    </swiper-item>  
+</swiper>  
+
+
+</view>

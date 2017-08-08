@@ -1,0 +1,46 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f2;
+}
+.success-icon{
+  margin: 0 auto;
+  display: block;
+  width:150rpx;
+  height:150rpx;
+  margin-top: 100rpx;
+  margin-bottom: 30rpx;
+}
+
+.success-content text{
+  text-align: center;
+  display: block;
+  margin-bottom: 50rpx;
+  font-size: 32rpx;
+}
+
+.line{
+  height: 3rpx;
+  width: 100%;
+  background-color: #e7e7e7;
+  margin: 30rpx 0 130rpx 0;
+}
+.qr{
+  margin: 0 auto;
+  display: block;
+  width:400rpx;
+  height:400rpx;
+}
+.qr-desc{
+  text-align: center;
+  display: block;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  color: #04b00f
+}

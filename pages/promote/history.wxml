@@ -1,0 +1,17 @@
+<!--history.wxml-->
+<view wx:for="{{hisList}}" wx:key="{{item.id}}" style="background:#FFF;overflow:hidden;">
+  <view class="line-content" style="margin:20rpx 0 60rpx 30rpx;font-size:32rpx;">
+    <text>好友姓名：</text>
+    <text class="content" style="font-size:40rpx;color:#333;">{{item.price}}</text>
+  </view>
+  <view class="line-content">
+    <text>推荐时间：</text>
+    <text class="content">{{item.price}}</text>
+  </view>
+  <view class="line-content">
+    <text>来源：</text>
+    <text class="content">{{item.money}}</text>
+  </view>
+  <view class="line-full"></view>
+</view>
+<view style="padding:30rpx;border-bottom:2rpx solid #d9d9d9;text-align:center;font-size:24rpx;background:#FFF;color:#333;">没有更多数据了</view>

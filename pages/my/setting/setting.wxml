@@ -1,0 +1,9 @@
+<!--setting.wxml-->
+<view catchtouchmove="catchMove" class="page">
+  <view class="list">
+    <view class="item" bindtap="bindTapTaxi">
+      <text class="main">打车协议</text>
+      <image class="arrow" src="https://qn.wx.ilidu.cn/wxapp/my_arrow.webp-png" />
+    </view>
+  </view>
+</view>
